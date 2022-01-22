@@ -1,0 +1,14 @@
+{
+  "Servers": {
+    "otus-postgres": {
+      "Name": "alpa-postgres",
+      "Group": "Servers",
+      "Host": "alpa-postgres",
+      "Port": 5432,
+      "Username": "usr",
+      "SSLMode": "prefer",
+      "MaintenanceDB": "postgres"
+    }
+  }
+}
+
