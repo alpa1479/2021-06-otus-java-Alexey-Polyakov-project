@@ -1,0 +1,69 @@
+import edu.st4rd.otus.Versions
+
+plugins {
+    id "idea"
+    id "io.spring.dependency-management" version "1.0.11.RELEASE"
+}
+
+idea {
+    project {
+        languageLevel = 17
+    }
+    module {
+        downloadJavadoc = true
+        downloadSources = true
+    }
+}
+
+allprojects {
+    apply plugin: "java"
+    apply plugin: "io.spring.dependency-management"
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    tasks.withType(JavaCompile) {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+        options.with {
+            encoding = "UTF-8"
+        }
+    }
+
+    test {
+        useJUnitPlatform()
+        testLogging {
+            events "passed", "skipped", "failed"
+        }
+    }
+
+    configurations.all {
+        resolutionStrategy {
+            failOnVersionConflict()
+        }
+    }
+
+    dependencyManagement {
+        dependencies {
+            imports {
+                mavenBom("org.springframework.boot:spring-boot-dependencies:${Versions.SPRING_BOOT_DEPENDENCIES}")
+            }
+
+            dependency("org.springframework:spring-test:${Versions.SPRING_TEST}")
+            dependency("org.projectlombok:lombok:${Versions.LOMBOK}")
+        }
+    }
+}
+
+task printManagedVersions {
+    group "custom help"
+    description "prints dependencies declared in BOM"
+
+    doLast {
+        dependencyManagement.managedVersions.each {
+            println it
+        }
+    }
+}
