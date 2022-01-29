@@ -1,10 +1,21 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+import { WelcomeViewComponent } from './features/welcome-view/welcome-view.component';
+
+const routes: Routes = [
+  { path: 'welcome', component: WelcomeViewComponent },
+  { path: '', redirectTo: '/welcome', pathMatch: 'full' }
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [
+    CommonModule,
+    RouterModule.forRoot(routes)
+  ],
+  exports: [
+    RouterModule
+  ]
 })
 export class AppRoutingModule { }
