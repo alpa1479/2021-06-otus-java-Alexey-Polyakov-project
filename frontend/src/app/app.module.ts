@@ -13,6 +13,7 @@ import { WelcomeViewComponent } from './features/welcome-view/welcome-view.compo
 import { HeaderComponent } from './shared/navigation/header/header.component';
 import { SidenavListComponent } from './shared/navigation/sidenav-list/sidenav-list.component';
 import { FooterComponent } from './shared/navigation/footer/footer.component';
+import { LoginViewComponent } from './features/login-view/login-view.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FooterComponent } from './shared/navigation/footer/footer.component';
     WelcomeViewComponent,
     HeaderComponent,
     SidenavListComponent,
-    FooterComponent
+    FooterComponent,
+    LoginViewComponent
   ],
   imports: [
     BrowserModule,
