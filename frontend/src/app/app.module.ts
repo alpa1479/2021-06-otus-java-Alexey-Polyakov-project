@@ -14,6 +14,7 @@ import { HeaderComponent } from './shared/navigation/header/header.component';
 import { SidenavListComponent } from './shared/navigation/sidenav-list/sidenav-list.component';
 import { FooterComponent } from './shared/navigation/footer/footer.component';
 import { LoginViewComponent } from './features/login-view/login-view.component';
+import { RegisterViewComponent } from './features/register-view/register-view.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LoginViewComponent } from './features/login-view/login-view.component';
     HeaderComponent,
     SidenavListComponent,
     FooterComponent,
-    LoginViewComponent
+    LoginViewComponent,
+    RegisterViewComponent
   ],
   imports: [
     BrowserModule,
