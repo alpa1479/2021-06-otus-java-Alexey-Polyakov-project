@@ -15,6 +15,7 @@ import { SidenavListComponent } from './shared/navigation/sidenav-list/sidenav-l
 import { FooterComponent } from './shared/navigation/footer/footer.component';
 import { LoginViewComponent } from './features/login-view/login-view.component';
 import { RegisterViewComponent } from './features/register-view/register-view.component';
+import { ProjectsViewComponent } from './features/projects-view/projects-view.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { RegisterViewComponent } from './features/register-view/register-view.co
     SidenavListComponent,
     FooterComponent,
     LoginViewComponent,
-    RegisterViewComponent
+    RegisterViewComponent,
+    ProjectsViewComponent
   ],
   imports: [
     BrowserModule,
