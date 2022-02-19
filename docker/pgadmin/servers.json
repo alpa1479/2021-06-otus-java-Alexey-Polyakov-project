@@ -1,9 +1,9 @@
 {
   "Servers": {
-    "otus-postgres": {
-      "Name": "alpa-postgres",
+    "alpa-keycloak-postgres": {
+      "Name": "alpa-keycloak-postgres",
       "Group": "Servers",
-      "Host": "alpa-postgres",
+      "Host": "alpa-keycloak-postgres",
       "Port": 5432,
       "Username": "usr",
       "SSLMode": "prefer",
