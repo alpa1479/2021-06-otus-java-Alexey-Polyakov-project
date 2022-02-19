@@ -26,8 +26,8 @@ services:
       - PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED=False
     depends_on:
       - keycloak-postgres
-  #    networks:
-  #      - keycloak
+    networks:
+      - keycloak
 
   keycloak-postgres:
     container_name: alpa-keycloak-postgres
@@ -40,8 +40,8 @@ services:
     ports:
       - "5432:5432"
     restart: unless-stopped
-  #    networks:
-  #      - keycloak
+    networks:
+      - keycloak
 
   keycloak:
     container_name: alpa-keycloak
@@ -51,8 +51,8 @@ services:
       - "8484:8080"
     depends_on:
       - keycloak-postgres
-#    networks:
-#      - keycloak
+    networks:
+      - keycloak
 
-#networks:
-#  keycloak:
+networks:
+  keycloak:

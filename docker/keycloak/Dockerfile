@@ -2,7 +2,7 @@ FROM quay.io/keycloak/keycloak:latest as builder
 
 ENV KC_DB=postgres
 #ENV KC_CACHE=local
-ENV KC_FEATURES=token-exchange,docker,authorization
+ENV KC_FEATURES=token-exchange
 ENV KC_METRICS_ENABLED=true
 
 RUN /opt/keycloak/bin/kc.sh build
@@ -14,11 +14,8 @@ WORKDIR /opt/keycloak
 ENV KC_DB_URL=jdbc:postgresql://alpa-keycloak-postgres:5432/keycloak_db
 ENV KEYCLOAK_ADMIN=admin
 ENV KEYCLOAK_ADMIN_PASSWORD=admin
-#ENV KC_DB_URL_HOST=alpa-keycloak-postgres
 ENV KC_DB_USERNAME=usr
 ENV KC_DB_PASSWORD=pwd
-#ENV KC_DB_URL_DATABASE=keycloak_db
-ENV KC_HOSTNAME=localhost:8080
 
 COPY realms/issues_folder-realm.json /tmp/realms/issues_folder-realm.json
 COPY realms/master-realm.json /tmp/realms/master-realm.json
