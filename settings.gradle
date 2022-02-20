@@ -1,1 +1,2 @@
 rootProject.name = "2021-06-otus-java-Alexey-Polyakov-project"
+include "backend"

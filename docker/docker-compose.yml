@@ -1,17 +1,17 @@
-version: '3.3'
+version: "3.8"
 
 services:
-  postgres:
-    container_name: alpa-postgres
-    hostname: alpa-postgres
-    build: ./postgres
-    ports:
-       - "5432:5432"
-    command: postgres -c max_connections=200
-    environment:
-      - POSTGRES_USER=usr
-      - POSTGRES_PASSWORD=pwd
-      - POSTGRES_DB=postgres
+  #  postgres:
+  #    container_name: alpa-postgres
+  #    hostname: alpa-postgres
+  #    build: ./postgres
+  #    ports:
+  #      - "5432:5432"
+  #    command: postgres -c max_connections=200
+  #    environment:
+  #      - POSTGRES_USER=usr
+  #      - POSTGRES_PASSWORD=pwd
+  #      - POSTGRES_DB=postgres
 
   pgadmin:
     container_name: alpa-pgadmin
@@ -25,4 +25,34 @@ services:
       - PGADMIN_CONFIG_SERVER_MODE=False
       - PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED=False
     depends_on:
-      - postgres
+      - keycloak-postgres
+    networks:
+      - keycloak
+
+  keycloak-postgres:
+    container_name: alpa-keycloak-postgres
+    hostname: alpa-keycloak-postgres
+    image: library/postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-usr}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-pwd}
+      POSTGRES_DB: keycloak_db
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+    networks:
+      - keycloak
+
+  keycloak:
+    container_name: alpa-keycloak
+    hostname: alpa-keycloak
+    build: ./keycloak
+    ports:
+      - "8484:8080"
+    depends_on:
+      - keycloak-postgres
+    networks:
+      - keycloak
+
+networks:
+  keycloak:
