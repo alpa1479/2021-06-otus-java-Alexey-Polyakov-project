@@ -12,8 +12,6 @@ COPY --from=builder /opt/keycloak/lib/quarkus/ /opt/keycloak/lib/quarkus/
 WORKDIR /opt/keycloak
 
 ENV KC_DB_URL=jdbc:postgresql://alpa-keycloak-postgres:5432/keycloak_db
-ENV KEYCLOAK_ADMIN=admin
-ENV KEYCLOAK_ADMIN_PASSWORD=admin
 ENV KC_DB_USERNAME=usr
 ENV KC_DB_PASSWORD=pwd
 
