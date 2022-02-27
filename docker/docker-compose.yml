@@ -1,33 +1,19 @@
 version: "3.8"
 
 services:
-  #  postgres:
-  #    container_name: alpa-postgres
-  #    hostname: alpa-postgres
-  #    build: ./postgres
-  #    ports:
-  #      - "5432:5432"
-  #    command: postgres -c max_connections=200
-  #    environment:
-  #      - POSTGRES_USER=usr
-  #      - POSTGRES_PASSWORD=pwd
-  #      - POSTGRES_DB=postgres
-
-  pgadmin:
-    container_name: alpa-pgadmin
-    hostname: alpa-pgadmin
-    build: ./pgadmin
-    ports:
-      - "9090:80"
+  postgres:
+    container_name: alpa-postgres
+    hostname: alpa-postgres
+    build: ./postgres
+    command: postgres -c max_connections=200 -p 5433
     environment:
-      - PGADMIN_DEFAULT_EMAIL=postgres@localhost
-      - PGADMIN_DEFAULT_PASSWORD=postgres
-      - PGADMIN_CONFIG_SERVER_MODE=False
-      - PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED=False
-    depends_on:
-      - keycloak-postgres
+      POSTGRES_USER: ${POSTGRES_USER:-usr}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-pwd}
+      POSTGRES_DB: issues_folder
+    ports:
+      - "5433:5433"
     networks:
-      - keycloak
+      - pgadmin
 
   keycloak-postgres:
     container_name: alpa-keycloak-postgres
@@ -42,6 +28,7 @@ services:
     restart: unless-stopped
     networks:
       - keycloak
+      - pgadmin
 
   keycloak:
     container_name: alpa-keycloak
@@ -54,5 +41,23 @@ services:
     networks:
       - keycloak
 
+  pgadmin:
+    container_name: alpa-pgadmin
+    hostname: alpa-pgadmin
+    build: ./pgadmin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=postgres@localhost
+      - PGADMIN_DEFAULT_PASSWORD=postgres
+      - PGADMIN_CONFIG_SERVER_MODE=False
+      - PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED=False
+    ports:
+      - "9090:80"
+    depends_on:
+      - postgres
+      - keycloak-postgres
+    networks:
+      - pgadmin
+
 networks:
   keycloak:
+  pgadmin:

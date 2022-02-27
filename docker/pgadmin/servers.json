@@ -8,6 +8,15 @@
       "Username": "usr",
       "SSLMode": "prefer",
       "MaintenanceDB": "postgres"
+    },
+    "alpa-postgres": {
+      "Name": "alpa-postgres",
+      "Group": "Servers",
+      "Host": "alpa-postgres",
+      "Port": 5433,
+      "Username": "usr",
+      "SSLMode": "prefer",
+      "MaintenanceDB": "postgres"
     }
   }
 }
