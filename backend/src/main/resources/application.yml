@@ -1,6 +1,9 @@
+server:
+  port: ${SERVER_PORT:8080}
+
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/issues_folder
+    url: jdbc:postgresql://localhost:5433/issues_folder
     username: usr
     password: pwd
 

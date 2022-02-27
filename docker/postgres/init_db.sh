@@ -1,6 +1,3 @@
-echo "=== Creating the 'issues_folder' database ==="
-psql -U postgres -c 'CREATE DATABASE issues_folder'
-
 echo "=== Schema initialization for 'issues_folder' database ==="
 psql issues_folder usr -f /tmp/schema.sql
 
