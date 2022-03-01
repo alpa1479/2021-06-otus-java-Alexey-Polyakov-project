@@ -1,4 +1,4 @@
-package edu.st4rd.otus.core.transactionmanager;
+package edu.issuetracker.core.transactionmanager;
 
 public interface TransactionManager {
 

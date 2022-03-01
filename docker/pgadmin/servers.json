@@ -1,18 +1,18 @@
 {
   "Servers": {
-    "alpa-keycloak-postgres": {
-      "Name": "alpa-keycloak-postgres",
+    "keycloak-postgres": {
+      "Name": "keycloak-postgres",
       "Group": "Servers",
-      "Host": "alpa-keycloak-postgres",
+      "Host": "keycloak-postgres",
       "Port": 5432,
       "Username": "usr",
       "SSLMode": "prefer",
       "MaintenanceDB": "postgres"
     },
-    "alpa-postgres": {
-      "Name": "alpa-postgres",
+    "backend-postgres": {
+      "Name": "backend-postgres",
       "Group": "Servers",
-      "Host": "alpa-postgres",
+      "Host": "backend-postgres",
       "Port": 5433,
       "Username": "usr",
       "SSLMode": "prefer",

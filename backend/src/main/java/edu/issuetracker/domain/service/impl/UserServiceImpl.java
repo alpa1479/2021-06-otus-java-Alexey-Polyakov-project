@@ -1,9 +1,9 @@
-package edu.st4rd.otus.domain.service.impl;
+package edu.issuetracker.domain.service.impl;
 
-import edu.st4rd.otus.core.transactionmanager.TransactionManager;
-import edu.st4rd.otus.domain.model.User;
-import edu.st4rd.otus.domain.repository.UserRepository;
-import edu.st4rd.otus.domain.service.UserService;
+import edu.issuetracker.domain.model.User;
+import edu.issuetracker.domain.repository.UserRepository;
+import edu.issuetracker.core.transactionmanager.TransactionManager;
+import edu.issuetracker.domain.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

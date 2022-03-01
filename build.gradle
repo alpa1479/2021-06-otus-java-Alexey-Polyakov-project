@@ -1,4 +1,4 @@
-import edu.st4rd.otus.Versions
+import edu.issuetracker.Versions
 
 plugins {
     id "idea"

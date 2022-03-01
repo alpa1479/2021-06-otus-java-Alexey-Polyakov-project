@@ -1,4 +1,4 @@
-package edu.st4rd.otus;
+package edu.issuetracker;
 
 public final class Versions {
 

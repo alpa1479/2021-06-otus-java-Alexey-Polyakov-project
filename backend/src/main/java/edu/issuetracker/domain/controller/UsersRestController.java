@@ -1,7 +1,7 @@
-package edu.st4rd.otus.domain.controller;
+package edu.issuetracker.domain.controller;
 
-import edu.st4rd.otus.domain.model.User;
-import edu.st4rd.otus.domain.service.UserService;
+import edu.issuetracker.domain.model.User;
+import edu.issuetracker.domain.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
