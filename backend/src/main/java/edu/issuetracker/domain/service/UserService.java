@@ -1,6 +1,6 @@
-package edu.st4rd.otus.domain.service;
+package edu.issuetracker.domain.service;
 
-import edu.st4rd.otus.domain.model.User;
+import edu.issuetracker.domain.model.User;
 
 import java.util.Optional;
 

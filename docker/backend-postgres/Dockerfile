@@ -1,4 +1,4 @@
-FROM postgres:10.3
+FROM postgres:latest
 
 COPY schema.sql /tmp/
 COPY data/*.sql /tmp/data/

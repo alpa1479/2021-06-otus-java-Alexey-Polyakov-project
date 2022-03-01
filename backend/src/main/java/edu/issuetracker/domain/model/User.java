@@ -1,4 +1,4 @@
-package edu.st4rd.otus.domain.model;
+package edu.issuetracker.domain.model;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

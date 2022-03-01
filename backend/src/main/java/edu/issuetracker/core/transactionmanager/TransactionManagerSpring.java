@@ -1,4 +1,4 @@
-package edu.st4rd.otus.core.transactionmanager;
+package edu.issuetracker.core.transactionmanager;
 
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;

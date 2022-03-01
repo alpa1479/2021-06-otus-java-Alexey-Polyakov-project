@@ -1,6 +1,6 @@
-package edu.st4rd.otus.domain.repository;
+package edu.issuetracker.domain.repository;
 
-import edu.st4rd.otus.domain.model.User;
+import edu.issuetracker.domain.model.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
