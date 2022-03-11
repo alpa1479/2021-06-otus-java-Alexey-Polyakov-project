@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { RepositoryService } from 'src/app/core/repository/repository.service';
 
 @Component({
   selector: 'app-projects-view',
@@ -11,20 +12,20 @@ export class ProjectsViewComponent implements AfterViewInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+
   ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
   }
 
-  ngOnInit() {
+  constructor(private repository: RepositoryService) {
+
   }
 
-  public redirectToDetails = (id: string) => {
-    
-  }
-  public redirectToUpdate = (id: string) => {
-    
-  }
-  public redirectToDelete = (id: string) => {
-    
+  _onClick() {
+    this.repository.get("api/users/1").subscribe(data => {
+      console.log('>>>> data = ', data);
+    });
   }
 }
 

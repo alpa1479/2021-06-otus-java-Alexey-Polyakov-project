@@ -10,7 +10,7 @@ dependencies {
     implementation "org.postgresql:postgresql"
     implementation "org.springframework.boot:spring-boot-starter-web"
     implementation "org.springframework.boot:spring-boot-starter-data-jdbc"
-    implementation "org.springframework.boot:spring-boot-starter-security"
+//    implementation "org.springframework.boot:spring-boot-starter-security"
 
     testImplementation "org.junit.jupiter:junit-jupiter-api"
     testImplementation "org.junit.jupiter:junit-jupiter-engine"

@@ -11,6 +11,10 @@
 }
 
 .navbar-nav {
-    font-size: large;
+    font-size: medium;
     color: #6c757d;
+}
+
+.nav-link {
+    padding: 10px 5px 0 5px;
 }
