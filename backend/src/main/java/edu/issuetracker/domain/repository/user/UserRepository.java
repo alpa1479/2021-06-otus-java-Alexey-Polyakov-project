@@ -1,6 +1,6 @@
-package edu.issuetracker.domain.repository;
+package edu.issuetracker.domain.repository.user;
 
-import edu.issuetracker.domain.model.User;
+import edu.issuetracker.domain.model.user.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

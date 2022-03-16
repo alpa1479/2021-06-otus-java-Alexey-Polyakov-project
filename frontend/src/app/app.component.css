@@ -1,4 +1,5 @@
 main {
-    height: 100%;
+    height: 100vh;
+    padding-top: 68.4px;
     background-color: #f8f9fa;
 }
