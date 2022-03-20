@@ -19,9 +19,9 @@ public class ProjectServiceImpl implements ProjectService {
     private final ProjectRepository projectRepository;
 
     @Override
-    public Page<Project> getProjectsPage(Pageable pageable) {
+    public Page<Project> getProjectsPage(Pageable pageable, String search) {
         return transactionManager.doInReadOnlyTransaction(() -> {
-            Page<Project> projects = projectRepository.findAllPaginated(pageable);
+            Page<Project> projects = projectRepository.findAllPaginated(pageable, search);
             log.info("projects: {}", projects);
             return projects;
         });

@@ -23,6 +23,6 @@ public interface Converter<IN, OUT> {
             return PageViewModel.empty();
         }
         List<IN> content = emptyIfNull(source.getContent());
-        return new PageViewModel<>(content.stream().map(this::convert).toList(), source.getSize(), source.getTotalElements());
+        return new PageViewModel<>(content.stream().map(this::convert).toList(), source.getTotalElements());
     }
 }

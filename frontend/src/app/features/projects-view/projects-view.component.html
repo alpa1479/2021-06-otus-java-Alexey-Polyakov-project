@@ -1,31 +1,40 @@
-<mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
-<table mat-table matSort [dataSource]="dataSource" (matSortChange)="onSortChange($event)">
+<div class="controls">
+  <button class="btn btn-outline-secondary btn-sm mr-1" type="submit">Create</button>
+  <mat-form-field>
+    <input matInput placeholder="Search projects" #search>
+    <button matSuffix mat-icon-button aria-label="Clear" (click)="_reset()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
+<mat-progress-bar mode="indeterminate" *ngIf="dataSource.loading$ | async"></mat-progress-bar>
+<table mat-table matSort [dataSource]="dataSource">
   <ng-container matColumnDef="title">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Title</th>
     <td mat-cell *matCellDef="let project"> {{project.title}}</td>
   </ng-container>
 
-  <ng-container matColumnDef="status">
+  <ng-container matColumnDef="status_id">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Status</th>
     <td mat-cell *matCellDef="let project"> {{project.status}}</td>
   </ng-container>
 
-  <ng-container matColumnDef="owner">
+  <ng-container matColumnDef="owner_username">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Owner</th>
     <td mat-cell *matCellDef="let project"> {{project.owner.username}}</td>
   </ng-container>
 
-  <ng-container matColumnDef="created date">
+  <ng-container matColumnDef="created_date">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Created date</th>
     <td mat-cell *matCellDef="let project"> {{project.createdDate}}</td>
   </ng-container>
 
-  <ng-container matColumnDef="updated date">
+  <ng-container matColumnDef="updated_date">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Updated date</th>
     <td mat-cell *matCellDef="let project"> {{project.updatedDate}}</td>
   </ng-container>
 
-  <ng-container matColumnDef="closed date">
+  <ng-container matColumnDef="closed_date">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Closed date</th>
     <td mat-cell *matCellDef="let project"> {{project.closedDate}}</td>
   </ng-container>
@@ -33,8 +42,7 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClicked(row)"></tr>
 </table>
-<mat-paginator (page)="onPageChange($event)"
-               [length]="totalCount"
+<mat-paginator [length]="dataSource.totalCount$ | async"
                [hidePageSize]="true"
                [pageSizeOptions]="pageSizeOptions" showFirstLastButtons>
 </mat-paginator>

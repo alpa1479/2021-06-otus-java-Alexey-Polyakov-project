@@ -6,5 +6,5 @@ import org.springframework.data.domain.Pageable;
 
 public interface ProjectService {
 
-    Page<Project> getProjectsPage(Pageable pageable);
+    Page<Project> getProjectsPage(Pageable pageable, String search);
 }

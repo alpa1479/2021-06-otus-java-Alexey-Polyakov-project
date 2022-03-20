@@ -11,6 +11,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {MatProgressBarModule} from "@angular/material/progress-bar";
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [],
@@ -21,6 +22,7 @@ import {MatProgressBarModule} from "@angular/material/progress-bar";
     MatToolbarModule,
     MatIconModule,
     MatSortModule,
+    MatInputModule,
     MatButtonModule,
     MatListModule,
     MatCardModule,
@@ -35,6 +37,7 @@ import {MatProgressBarModule} from "@angular/material/progress-bar";
     MatIconModule,
     MatButtonModule,
     MatSortModule,
+    MatInputModule,
     MatListModule,
     MatCardModule,
     MatTableModule,

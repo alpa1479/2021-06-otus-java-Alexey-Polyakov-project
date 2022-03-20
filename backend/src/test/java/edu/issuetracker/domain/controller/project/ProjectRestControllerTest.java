@@ -35,7 +35,7 @@ class ProjectRestControllerTest {
                 .andExpect(status().isOk());
 
         ArgumentCaptor<Pageable> pageableCaptor = ArgumentCaptor.forClass(Pageable.class);
-        verify(projectService).getProjectsPage(pageableCaptor.capture());
+        verify(projectService).getProjectsPage(pageableCaptor.capture(), "test");
 
         PageRequest pageable = (PageRequest) pageableCaptor.getValue();
 

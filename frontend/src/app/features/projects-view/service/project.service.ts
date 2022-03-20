@@ -15,11 +15,14 @@ export class ProjectService {
 
   public getProjects(request?: ProjectTableRequest): Observable<Page<ProjectTableElement>> {
     let route: string = "api/projects";
-    if (request?.page) {
+    if (request?.size) {
       route += `?page=${request?.page}&size=${request?.size}`
     }
     if (request?.sort) {
       route += `&sort=${request?.sort}`
+    }
+    if (request?.search) {
+      route += `&search=${request?.search}`
     }
     return this.repository.get(route);
   }

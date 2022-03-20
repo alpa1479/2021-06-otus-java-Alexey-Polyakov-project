@@ -11,3 +11,20 @@ table {
   background-color: #e9ecef;
   cursor: pointer;
 }
+
+.mat-form-field {
+  margin-top: 5px;
+  margin-right: 30px;
+}
+
+tr.mat-row, tr.mat-footer-row {
+  height: 40px;
+}
+
+.controls {
+  float: right;
+}
+
+.btn {
+  margin-right: 15px;
+}

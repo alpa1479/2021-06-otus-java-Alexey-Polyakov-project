@@ -6,5 +6,5 @@ import org.springframework.data.domain.Pageable;
 
 public interface CustomProjectRepository {
 
-    Page<Project> findAllPaginated(Pageable pageable);
+    Page<Project> findAllPaginated(Pageable pageable, String search);
 }

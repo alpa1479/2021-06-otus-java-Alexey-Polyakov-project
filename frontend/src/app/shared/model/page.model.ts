@@ -1,6 +1,5 @@
 export class Page<T> {
 
-  elements: T[];
-  currentSize: number;
-  totalCount: number;
+  constructor(public elements: T[], public currentSize: number, public totalCount: number) {
+  }
 }

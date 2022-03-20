@@ -13,6 +13,7 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.data.web.SortDefault;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -28,8 +29,8 @@ public class ProjectRestController {
                                                                        @SortDefault.SortDefaults({
                                                                                @SortDefault(sort = "status_id"),
                                                                                @SortDefault(sort = "created_date", direction = Sort.Direction.DESC)
-                                                                       }) Pageable pageable) {
-        Page<Project> projectsPage = projectService.getProjectsPage(pageable);
+                                                                       }) Pageable pageable, @RequestParam(value = "search", required = false) String search) {
+        Page<Project> projectsPage = projectService.getProjectsPage(pageable, search);
         return projectToProjectTableElementConverter.convert(projectsPage);
     }
 }
