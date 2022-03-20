@@ -3,7 +3,6 @@ package edu.issuetracker.domain.controller.user;
 import edu.issuetracker.domain.model.user.Role;
 import edu.issuetracker.domain.service.user.RoleService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,12 +18,12 @@ public class RoleRestController {
     private final RoleService roleService;
 
     @GetMapping("/api/roles")
-    public ResponseEntity<Set<Role>> getRoles() {
-        return ResponseEntity.ok(roleService.getRoles());
+    public Set<Role> getRoles() {
+        return roleService.getRoles();
     }
 
     @GetMapping("/api/roles/{id}")
-    public ResponseEntity<Role> getRoleById(@PathVariable(name = "id") long id) {
-        return ResponseEntity.of(roleService.getRole(id));
+    public Role getRoleById(@PathVariable(name = "id") long id) {
+        return roleService.getRole(id).orElse(null);
     }
 }

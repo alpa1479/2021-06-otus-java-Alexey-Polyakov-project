@@ -1,9 +1,9 @@
 package edu.issuetracker.domain.repository.project;
 
 import edu.issuetracker.domain.model.project.Project;
-import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ProjectRepository extends PagingAndSortingRepository<Project, Long>, CustomProjectRepository {
+public interface ProjectRepository extends CrudRepository<Project, Long>, CustomProjectRepository {
 }

@@ -6,3 +6,8 @@ table {
 .mat-paginator {
   background-color: inherit;
 }
+
+.mat-row:hover {
+  background-color: #e9ecef;
+  cursor: pointer;
+}

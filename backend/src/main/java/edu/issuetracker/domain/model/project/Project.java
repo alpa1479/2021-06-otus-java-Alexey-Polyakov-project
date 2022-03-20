@@ -24,4 +24,8 @@ public class Project {
     private final LocalDate createdDate;
     private final LocalDate updatedDate;
     private final LocalDate closedDate;
+
+    public String getStatusName() {
+        return status.getName();
+    }
 }
