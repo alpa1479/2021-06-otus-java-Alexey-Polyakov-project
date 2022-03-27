@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5433/issue_tracker
+    url: jdbc:postgresql://backend-postgres:5433/issue_tracker
     username: usr
     password: pwd
   jackson:
