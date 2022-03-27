@@ -10,10 +10,10 @@ import {MaterialModule} from './core/material/material.module';
 import {WelcomeViewComponent} from './features/welcome-view/welcome-view.component';
 import {HeaderComponent} from './shared/components/header/header.component';
 import {FooterComponent} from './shared/components/footer/footer.component';
-import {LoginViewComponent} from './features/login-view/login-view.component';
-import {RegisterViewComponent} from './features/register-view/register-view.component';
 import {ProjectsViewComponent} from './features/projects-view/projects-view.component';
 import {RepositoryService} from './core/repository/repository.service';
+import {AuthGuard} from "./shared/guard/auth.guard";
+import {AuthService} from "./shared/services/auth/auth.service";
 
 @NgModule({
   declarations: [
@@ -21,8 +21,6 @@ import {RepositoryService} from './core/repository/repository.service';
     WelcomeViewComponent,
     HeaderComponent,
     FooterComponent,
-    LoginViewComponent,
-    RegisterViewComponent,
     ProjectsViewComponent
   ],
   imports: [
@@ -38,7 +36,7 @@ import {RepositoryService} from './core/repository/repository.service';
       }
     })
   ],
-  providers: [RepositoryService],
+  providers: [RepositoryService, AuthGuard, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

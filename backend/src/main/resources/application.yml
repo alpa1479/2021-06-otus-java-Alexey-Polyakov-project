@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5433/issue_tracker
+    url: jdbc:postgresql://backend-postgres:5433/issue_tracker
     username: usr
     password: pwd
   jackson:
@@ -12,7 +12,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          jwk-set-uri: http://localhost:8484/realms/issue_tracker/protocol/openid-connect/certs
+          jwk-set-uri: http://keycloak:8484/realms/issue_tracker/protocol/openid-connect/certs
 
 logging:
   level:

@@ -21,6 +21,27 @@ services:
           cpus: '0.5'
           memory: 1024M
 
+  # docker compose up backend
+  backend:
+    container_name: backend
+    hostname: backend
+    build:
+      context: ../
+      dockerfile: docker/backend/Dockerfile
+    ports:
+      - "${BACKEND_PORT}:8080"
+    depends_on:
+      - backend-postgres
+      - keycloak
+    networks:
+      - backend
+      - keycloak
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 1024M
+
   # docker compose up backend-postgres
   backend-postgres:
     container_name: backend-postgres
@@ -35,11 +56,12 @@ services:
       - "${BACKEND_POSTGRES_PORT}:5433"
     networks:
       - pgadmin
+      - backend
     deploy:
       resources:
         limits:
           cpus: '0.5'
-          memory: 512M
+          memory: 1024M
 
   # docker compose up keycloak-postgres
   keycloak-postgres:
@@ -68,7 +90,7 @@ services:
     hostname: keycloak
     build: ./keycloak
     ports:
-      - "${KEYCLOAK_PORT}:8080"
+      - "${KEYCLOAK_PORT}:8484"
     depends_on:
       - keycloak-postgres
     networks:
@@ -103,6 +125,7 @@ services:
 networks:
   keycloak:
   pgadmin:
+  backend:
 
 volumes:
   node_modules:

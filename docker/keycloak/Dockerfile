@@ -14,6 +14,7 @@ WORKDIR /opt/keycloak
 ENV KC_DB_URL=jdbc:postgresql://keycloak-postgres:5432/keycloak_db
 ENV KC_DB_USERNAME=usr
 ENV KC_DB_PASSWORD=pwd
+ENV KC_HTTP_PORT=8484
 
 COPY realms/issue_tracker-realm.json /tmp/realms/issue_tracker-realm.json
 COPY realms/master-realm.json /tmp/realms/master-realm.json

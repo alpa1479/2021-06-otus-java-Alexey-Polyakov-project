@@ -3,17 +3,14 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
 import {ProjectsViewComponent} from './features/projects-view/projects-view.component';
-import {LoginViewComponent} from './features/login-view/login-view.component';
-import {RegisterViewComponent} from './features/register-view/register-view.component';
 import {WelcomeViewComponent} from './features/welcome-view/welcome-view.component';
+import {AuthGuard} from "./shared/guard/auth.guard";
 
 const routes: Routes = [
   {path: 'welcome', component: WelcomeViewComponent},
   {path: '', redirectTo: '/welcome', pathMatch: 'full'},
-  {path: 'login', component: LoginViewComponent},
-  {path: 'register', component: RegisterViewComponent},
-  {path: 'projects', component: ProjectsViewComponent},
-  {path: 'projects/create', component: LoginViewComponent}
+  {path: 'projects', component: ProjectsViewComponent, canActivate: [AuthGuard]},
+  {path: 'projects/create', component: ProjectsViewComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({
