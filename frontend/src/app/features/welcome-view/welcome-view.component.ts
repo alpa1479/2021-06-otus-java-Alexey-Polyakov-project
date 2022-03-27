@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from "../../shared/services/auth/auth.service";
 
 @Component({
   selector: 'app-welcome-view',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WelcomeViewComponent implements OnInit {
 
-  constructor() { }
+  loggedIn: boolean;
 
-  ngOnInit(): void {
+  constructor(private authService: AuthService) {
   }
 
+  ngOnInit(): void {
+    this.loggedIn = this.authService.loggedIn();
+  }
+
+  public login() {
+    this.authService.login();
+  }
 }

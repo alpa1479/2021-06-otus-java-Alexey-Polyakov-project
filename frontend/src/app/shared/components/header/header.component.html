@@ -1,25 +1,24 @@
 <header>
-    <nav class="navbar navbar-expand-md navbar-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" routerLink="/welcome">Issue Tracker</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" routerLink="/projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-muted" routerLink="/issues">Issues</a>
-                    </li>
-                </ul>
-                <form class="d-flex">
-                    <button class="btn btn-outline-secondary me-2" type="submit">Log in</button>
-                    <button class="btn btn-outline-secondary" type="submit">Sing up</button>
-                </form>
-            </div>
-        </div>
-    </nav>
+  <nav class="navbar navbar-expand-md navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/welcome">Issue Tracker</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+              aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse" *ngIf="loggedIn">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-muted" routerLink="/issues">Issues</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <button class="btn btn-outline-secondary me-2" type="button" (click)="logout()">Sign out</button>
+        </form>
+      </div>
+    </div>
+  </nav>
 </header>
