@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
   }
 
   public logout() {
-    this.authService.logoff();
+    this.authService.logout();
   }
 
 }
