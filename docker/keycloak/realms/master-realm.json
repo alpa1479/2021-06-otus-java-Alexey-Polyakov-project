@@ -107,7 +107,7 @@
               "manage-events",
               "query-groups"
             ],
-            "issues_folder-realm": [
+            "issue_tracker-realm": [
               "query-realms",
               "view-identity-providers",
               "view-authorization",
@@ -425,7 +425,7 @@
           "attributes": {}
         }
       ],
-      "issues_folder-realm": [
+      "issue_tracker-realm": [
         {
           "id": "8a18cdac-f806-4b14-981a-766c6f4b8750",
           "name": "view-users",
@@ -433,7 +433,7 @@
           "composite": true,
           "composites": {
             "client": {
-              "issues_folder-realm": [
+              "issue_tracker-realm": [
                 "query-users",
                 "query-groups"
               ]
@@ -468,7 +468,7 @@
           "composite": true,
           "composites": {
             "client": {
-              "issues_folder-realm": [
+              "issue_tracker-realm": [
                 "query-clients"
               ]
             }
@@ -676,7 +676,7 @@
         "admin"
       ],
       "clientRoles": {
-        "issues_folder-realm": [
+        "issue_tracker-realm": [
           "view-users",
           "view-clients",
           "query-clients",
@@ -889,8 +889,8 @@
     },
     {
       "id": "a4b489cf-6bd8-4c4c-a64e-3b6570a6b809",
-      "clientId": "issues_folder-realm",
-      "name": "issues_folder Realm",
+      "clientId": "issue_tracker-realm",
+      "name": "issue_tracker Realm",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
