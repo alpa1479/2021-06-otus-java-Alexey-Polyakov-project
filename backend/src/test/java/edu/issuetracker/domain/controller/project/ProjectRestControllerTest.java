@@ -1,9 +1,10 @@
 package edu.issuetracker.domain.controller.project;
 
-import edu.issuetracker.domain.converter.Converter;
-import edu.issuetracker.domain.model.project.Project;
-import edu.issuetracker.domain.service.project.ProjectService;
-import edu.issuetracker.domain.viewmodel.project.ProjectTableElementViewModel;
+import edu.issuetracker.core.util.Converter;
+import edu.issuetracker.domain.project.model.Project;
+import edu.issuetracker.domain.project.controller.ProjectRestController;
+import edu.issuetracker.domain.project.service.ProjectService;
+import edu.issuetracker.domain.project.viewmodel.ProjectTableElementViewModel;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
 import org.springframework.beans.factory.annotation.Autowired;
