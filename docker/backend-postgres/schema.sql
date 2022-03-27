@@ -109,6 +109,6 @@ CREATE TABLE attachments
 
 CREATE TABLE subtasks
 (
-	parent_id				BIGINT NOT NULL REFERENCES issues(id),
-	child_id				BIGINT NOT NULL REFERENCES issues(id)
+    parent_id           BIGINT NOT NULL REFERENCES issues(id),
+    child_id            BIGINT NOT NULL REFERENCES issues(id)
 );

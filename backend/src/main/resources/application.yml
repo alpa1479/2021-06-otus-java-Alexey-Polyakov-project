@@ -6,6 +6,13 @@ spring:
     url: jdbc:postgresql://localhost:5433/issue_tracker
     username: usr
     password: pwd
+  jackson:
+    default-property-inclusion: non_null
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8484/realms/issue_tracker/protocol/openid-connect/certs
 
 logging:
   level:

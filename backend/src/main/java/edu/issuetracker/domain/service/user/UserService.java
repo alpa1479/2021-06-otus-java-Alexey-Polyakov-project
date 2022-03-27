@@ -1,6 +1,6 @@
-package edu.issuetracker.domain.service;
+package edu.issuetracker.domain.service.user;
 
-import edu.issuetracker.domain.model.User;
+import edu.issuetracker.domain.model.user.User;
 
 import java.util.Optional;
 

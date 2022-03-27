@@ -10,11 +10,12 @@ dependencies {
     implementation "org.postgresql:postgresql"
     implementation "org.springframework.boot:spring-boot-starter-web"
     implementation "org.springframework.boot:spring-boot-starter-data-jdbc"
-//    implementation "org.springframework.boot:spring-boot-starter-security"
+    implementation "org.apache.commons:commons-collections4"
+    implementation "org.apache.commons:commons-lang3:3.12.0"
+    implementation "org.springframework.boot:spring-boot-starter-security"
+    implementation "org.springframework.security:spring-security-oauth2-resource-server"
+    implementation "org.springframework.security:spring-security-oauth2-jose"
 
-    testImplementation "org.junit.jupiter:junit-jupiter-api"
-    testImplementation "org.junit.jupiter:junit-jupiter-engine"
-    testImplementation "org.junit.jupiter:junit-jupiter-params"
-    testImplementation "org.mockito:mockito-junit-jupiter"
+    testImplementation "org.springframework.boot:spring-boot-starter-test"
     testImplementation "org.assertj:assertj-core"
 }

@@ -1,13 +1,19 @@
-<div class="bg-light text-secondary px-4 py-5 text-center">
+<div class="text-secondary px-4 py-5 text-center">
     <div class="hero-container">
         <h1 class="display-5 fw-bold text-muted">Welcome to the Issue Tracker!</h1>
         <div class="col-lg-6 mx-auto">
             <p class="fs-5 mb-4 lh-base">This is a simple Angular project with Spring Boot that allow you to manage
                 your projects and join to existing ones, manage your tasks and distribute them between your team.</p>
-            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                <button type="button" class="btn btn-outline-secondary btn-lg px-4 me-sm-3">Log in</button>
-                <button type="button" class="btn btn-outline-secondary btn-lg px-4">Sign up</button>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center" *ngIf="loggedIn; else anonymous">
+                <button type="button" class="btn btn-outline-secondary btn-lg px-4 me-sm-3" routerLink="/projects">Go to projects</button>
             </div>
         </div>
     </div>
 </div>
+
+<ng-template #anonymous>
+  <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+    <button type="button" class="btn btn-outline-secondary btn-lg px-4 me-sm-3" (click)="login()">Log in</button>
+    <button type="button" class="btn btn-outline-secondary btn-lg px-4">Sign up</button>
+  </div>
+</ng-template>

@@ -1,9 +1,9 @@
-package edu.issuetracker.domain.service.impl;
+package edu.issuetracker.domain.service.user.impl;
 
-import edu.issuetracker.domain.model.User;
-import edu.issuetracker.domain.repository.UserRepository;
 import edu.issuetracker.core.transactionmanager.TransactionManager;
-import edu.issuetracker.domain.service.UserService;
+import edu.issuetracker.domain.model.user.User;
+import edu.issuetracker.domain.repository.user.UserRepository;
+import edu.issuetracker.domain.service.user.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
