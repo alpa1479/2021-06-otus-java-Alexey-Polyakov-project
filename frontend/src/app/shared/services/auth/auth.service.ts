@@ -21,6 +21,7 @@ export class AuthService {
     this.oauthService.loadDiscoveryDocumentAndTryLogin();
   }
 
+  // fix to remove location check for first loading - https://github.com/manfredsteyer/angular-oauth2-oidc/issues/221
   public loggedIn(): boolean {
     return window.location.href.includes("code") || (this.oauthService.hasValidAccessToken() && this.oauthService.hasValidIdToken());
   }
